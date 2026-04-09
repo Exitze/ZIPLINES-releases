@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>ZIPLINES Changelog</title>
+        <link>https://raw.githubusercontent.com/Exitze/ZIPLINES-releases/main/appcast.xml</link>
+        <description>Обновления ZIPLINES — архиватора для macOS</description>
+        <language>ru</language>
+
+        <!--
+        КАК ДОБАВИТЬ СЛЕДУЮЩИЙ РЕЛИЗ:
+
+        1. Собери Release архив:
+           xcodebuild -scheme ZIPLINES -configuration Release archive \
+             -archivePath ./build/ZIPLINES.xcarchive
+
+        2. Упакуй в zip:
+           ditto -c -k --keepParent ./build/ZIPLINES.xcarchive/Products/Applications/ZIPLINES.app \
+             ./build/release/ZIPLINES-X.Y.Z.zip
+
+        3. Подпиши (приватный ключ в Keychain):
+           ~/Library/Developer/Xcode/DerivedData/ZIPLINES-.../SourcePackages/artifacts/sparkle/Sparkle/bin/sign_update \
+             ./build/release/ZIPLINES-X.Y.Z.zip
+
+           → Скопируй edSignature и length в новый <item>
+
+        4. Загрузи ZIPLINES-X.Y.Z.zip в GitHub Releases (тег vX.Y.Z)
+        5. Закоммить обновлённый appcast.xml в main ветку
+        -->
+
+        <item>
+            <title>Версия 1.0.0</title>
+            <link>https://github.com/Exitze/ZIPLINES-releases/releases/tag/v1.0.0</link>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <description><![CDATA[
+                <h2>ZIPLINES 1.0.0</h2>
+                <ul>
+                    <li>Первый публичный релиз</li>
+                    <li>Поддержка ZIP, 7z, TAR, GZ, BZ2, XZ, RAR, ZSTD, LZ4</li>
+                    <li>QuickLook превью содержимого архивов прямо в Finder</li>
+                    <li>Share Extension — сжатие в ZIP из любого приложения</li>
+                    <li>Spotlight индексирование файлов внутри архивов</li>
+                    <li>AES-256 шифрование с Touch ID</li>
+                    <li>Разбивка архивов на части (split volumes)</li>
+                    <li>Автообновление через Sparkle</li>
+                </ul>
+            ]]></description>
+            <pubDate>Thu, 09 Apr 2026 09:52:00 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Exitze/ZIPLINES-releases/releases/download/v1.0.0/ZIPLINES-1.0.0.zip"
+                sparkle:version="1"
+                sparkle:shortVersionString="1.0.0"
+                sparkle:edSignature="ipSPoE9dO808Et7BDCOiFewYk2GLzocNMpSYwSv4/FYPRW/BXfEl4RW/6F3j/aq996QwDDJOwQrph/LPh7alAQ=="
+                length="7551481"
+                type="application/octet-stream"
+            />
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+        </item>
+
+    </channel>
+</rss>
